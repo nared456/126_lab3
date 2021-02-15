@@ -1,19 +1,20 @@
 #include<stdio.h>
 int main()
 {
-    long long num,i;
+    long long num,i=2;
     int p;
     scanf("%lld",&num);
     for(num;num>=0;num--)
     {
         p = 1;
-        for(i=2;i<num;i++)
+        while(i<num)
         {
             if(num%i==0)
             {
                 p=0;
                 break;
             }
+            i++;
         }
         if(p==1)
         {
