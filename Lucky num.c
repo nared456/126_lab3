@@ -1,19 +1,23 @@
 #include<stdio.h>
 int main()
 {
-    int num,p=0,x=2,n=0,tmp;
+    int num,p=0,x=2,c=0,tmp;
     scanf("%d",&num);
     tmp=num;
-    while(tmp<1)
+    while(tmp!=1)
     {
-        while(tmp%x==0)
+        if(tmp%x==0)
         {
             tmp /= x;
-            n++;
+            if(p==x)
+                break;
+            p = x;
+            c++;
         }
+        else
         x++;
     }
-    if(n==3)
+    if(c==3)
         printf("%d is a Lucky Number.",num);
     else
         printf("%d is not a Lucky Number.",num);
